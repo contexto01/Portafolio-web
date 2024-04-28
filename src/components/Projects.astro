@@ -1,0 +1,133 @@
+---
+import SocialPills from './socialPills.astro'
+
+import Tailwind from './icons/Tailwind.astro'
+import Astro from './icons/Astro.astro'
+import React from './icons/React.astro'
+import Nodejs from './icons/Nodejs.astro'
+import Mongodb from './icons/Mongodb.astro'
+import Github from './icons/github.astro'
+import Link from './icons/Link.astro'
+
+export interface TagItem {
+  name: string
+  class: string
+  icon: (options: any) => any
+}
+
+interface ProjectItem {
+  title: string
+  description: string
+  link?: string
+  code?: string
+  image: string
+  tags: TagItem[]
+}
+
+const TAGS: Record<string, TagItem> = {
+  TAILWIND: {
+    name: 'Tailwind',
+    class: 'hover:bg-blue-950',
+    icon: Tailwind
+  },
+  ASTRO: {
+    name: 'Astro',
+    class: 'bg-blue-500',
+    icon: Astro
+  },
+  REACT: {
+    name: 'React',
+    class: 'hover:bg-sky-950',
+    icon: React
+  },
+  NODEJS: {
+    name: 'Node.js',
+    class: 'hover:bg-emerald-950',
+    icon: Nodejs
+  },
+  MONGODB: {
+    name: 'Mongodb',
+    class: 'hover:bg-[#001E2B]',
+    icon: Mongodb
+  }
+}
+
+const PROJECTS: ProjectItem[] = [
+  {
+    title: 'Todo list contexto',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et, repellendus temporibus maxime voluptas sapiente quibusdam porro eius, illum suscipit officia, voluptatum in. Velit expedita ipsum sapiente, illum impedit at?',
+    link: 'https://todolistcontexto.netlify.app/',
+    image: '/projects/ProyectoTodolist.webp',
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.MONGODB]
+  },
+  {
+    title: 'Fall of the gods',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi et, repellendus temporibus maxime voluptas sapiente quibusdam porro eius, illum suscipit officia, voluptatum in. Velit expedita ipsum sapiente, illum impedit at?',
+    link: 'https://fallofthegods.netlify.app/',
+    code: 'https://github.com/contexto01/Fall-of-the-gods',
+    image: '/projects/FallOfTheGods.webp',
+    tags: [TAGS.TAILWIND, TAGS.REACT]
+  }
+]
+---
+
+<section class="flex flex-col gap-8 px-7 lg:px-0 transition-all">
+  <h2 class="text-4xl font-extrabold mb-4">&lt;/&gt; Proyectos</h2>
+  {
+    PROJECTS.map(({ image, title, description, tags, link, code }) => {
+      return (
+        <article class="flex gap-8 flex-wrap sm:flex-nowrap justify-center">
+          <div class="flex justify-center">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top sm:w-full bg-center sm:h-full w-full bg-cover flex flex-col items-center transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl grayscale hover:grayscale-0 hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+
+          <section class="flex flex-col gap-4">
+            <h3 class="text-3xl font-bold text-neutral-800">{title}</h3>
+            <ul class="flex gap-x-1 flex-row">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs text-white bg-black ${tag.class} transition-all py-1 px-2 hover:cursor-default group `}
+                    id="Tag"
+                  >
+                    <tag.icon
+                      class="size-4 group-hover:grayscale-0 grayscale transition-all"
+                      fill="currentColor"
+                    />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-neutral-500">{description}</p>
+            <ul class="flex gap-x-2">
+              {link ? (
+                <li>
+                  <SocialPills href={link}>
+                    <Link class="size-8" />
+                    Preview
+                  </SocialPills>
+                </li>
+              ) : null}
+              {code ? (
+                <li>
+                  <SocialPills href="#">
+                    <Github class="size-8" />
+                    Code
+                  </SocialPills>
+                </li>
+              ) : null}
+            </ul>
+          </section>
+        </article>
+      )
+    })
+  }
+</section>

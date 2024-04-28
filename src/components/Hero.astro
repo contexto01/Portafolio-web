@@ -1,0 +1,92 @@
+---
+import Linkedin from './icons/linkedin.astro'
+import SocialPills from './socialPills.astro'
+import WavingHand from './icons/wavingHand.astro'
+import Github from './icons/github.astro'
+import { Image } from 'astro:assets'
+---
+
+<header class="flex flex-col items-center gap-4">
+  <main class="flex justify-center flex-col items-center">
+    <Image
+      src="/contextoAvatar.png"
+      alt="Daniel barrera polo"
+      width="160"
+      height="160"
+      loading="eager"
+      class="rounded-full shadow-xl"
+    />
+    <h1 class="font-black text-5xl text-center text-balance">
+      Hey, soy daniel<WavingHand class="size-16 inline waving-hand" />
+    </h1>
+    <p
+      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-zinc-950 [&>strong]:text-zinc-950 [&>strong]:font-semibold dark:text-zinc-600 text-center text-balance"
+    >
+      +2 años de experiencia. <strong>Ingeniero de Software fullstack</strong>. Especializado
+      en el desarrollo de aplicaciones web, enfocado en soluciones innovadoras para impulsar el
+      éxito de cada proyecto.
+    </p>
+  </main>
+  <ul class="flex gap-4">
+    <li>
+      <SocialPills href="https://www.linkedin.com/in/daniel-steve-barrera-polo-39b93a271">
+        <Linkedin class="size-8" />
+        <p>Linkedin</p>
+      </SocialPills>
+    </li>
+    <li>
+      <SocialPills href="https://www.github.com/contexto01">
+        <Github class="size-8" />
+        <p>Github</p>
+      </SocialPills>
+    </li>
+  </ul>
+</header>
+
+<style>
+  @keyframes wavingAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .waving-hand {
+    animation: none;
+  }
+
+  .waving-hand.waving {
+    animation: wavingAnimation 1s alternate;
+  }
+</style>
+
+<script>
+  const wavingHand = document.querySelector('.waving-hand')
+
+  function wavingHandAnimation() {
+    if (wavingHand?.classList.contains('waving')) return
+    wavingHand?.classList.add('waving')
+    setTimeout(() => {
+      wavingHand?.classList.remove('waving')
+    }, 1000)
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    wavingHandAnimation()
+  })
+
+  wavingHand?.addEventListener('mouseenter', () => {
+    wavingHandAnimation()
+  })
+</script>
