@@ -1,44 +1,49 @@
 ---
 import '@fontsource-variable/onest'
-interface Props {
-  title: string
-}
-
-const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scrollbar scrollbar-thumb-neutral-200 scrollbar-track-neutral-900">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="¡Bienvenido a mi portafolio web! Soy Daniel, un joven de Cali, Colombia, apasionado por el desarrollo de software y comprometido con ofrecer experiencias de usuario excepcionales. ¡Explora conmigo proyectos innovadores y soluciones transformadoras!"
+    />
+    <meta
+      property="og:description"
+      content="¡Bienvenido a mi portafolio web! Soy Daniel, un joven de Cali, Colombia, apasionado por el desarrollo de software y comprometido con ofrecer experiencias de usuario excepcionales. ¡Explora conmigo proyectos innovadores y soluciones transformadoras!"
+    />
+    <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="Contexto web" />
+    <meta property="og:type" content="Portfolio" />
+    <meta property="og:url" content="https://contextoprotfolio.netlify.app/" />
+    <meta property="og:image" content="/public/PortadaPageWeb.png" />
+    <link rel="icon" type="image/svg+xml" href="/contextoAvatar.png" />
+    <link rel="canonical" href="https://contextoprotfolio.netlify.app" />
+    <link rel="apple-touch-icon" href="/public/PortadaPageWeb.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@contexto484" />
+    <meta name="twitter:creator" content="@contexto484" />
+    <meta property="og:url" content="https://contextoprotfolio.netlify.app/" />
+    <meta property="og:title" content="Contexto web" />
+    <meta
+      property="og:description"
+      content="¡Bienvenido a mi portafolio web! Soy Daniel, un joven de Cali, Colombia, apasionado por el desarrollo de software y comprometido con ofrecer experiencias de usuario excepcionales. ¡Explora conmigo proyectos innovadores y soluciones transformadoras!"
+    />
+    <meta property="og:image" content="/public/PortadaPageWeb.png" />
+    <title>Contexto web</title>
   </head>
   <body class="dark:bg-black">
-    <!-- <div
-      class="absolute inset-0 -z-10 h-screen w-full bg-black bg-[radial-gradient(#171717_1px,transparent_1px)] [background-size:16px_16px]"
-    > -->
-    <!-- <div
-      class="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
-    >
-    </div> -->
-    <!-- <div
-      class="fixed inset-0 -z-10 h-screen w-full dark:bg-black dark:bg-[radial-gradient(#171717_1px,transparent_1px)] dark:[background-size:16px_16px]bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
-    >
-    </div> -->
-    <!-- <div
-      class="fixed -z-10 h-full w-full bg-black bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
-    >
-    </div> -->
     <div
       class="fixed -z-10 h-full w-full dark:bg-black bottom-0 left-0 right-0 top-0 dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] dark:bg-[size:14px_24px] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
     >
     </div>
-
-    <!-- <div class="absolute inset-0 z-10 h-screen w-full bg-yellow-500"></div> -->
   </body>
 
   <slot />
