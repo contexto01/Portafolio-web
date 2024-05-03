@@ -1,0 +1,43 @@
+---
+import AboutIcon from './icons/AboutIcon.astro'
+import AboutImgMe from './icons/AboutImgMe.astro'
+---
+
+<section class="flex gap-x-4 flex-col" id="sobre-mi">
+  <h2 class="text-4xl font-extrabold mb-4 flex items-center gap-x-3 dark:text-white">
+    <AboutIcon class="size-16" />Sobre mi
+  </h2>
+  <main
+    class="flex items-center justify-center md:flex-nowrap flex-wrap flex-col-reverse md:flex-row gap-8"
+  >
+    <article
+      class="[&>p]:mb-4 [&>strong]:text-zinc-950 [&>strong]:font-semibold text-pretty text-neutral-700 dark:text-neutral-400 dark:[&>strong]:text-zinc-200"
+    >
+      <p>
+        Mi nombre es Daniel, tengo 16 años y soy de Cali, Colombia. <strong
+          >Actualmente estoy en proceso de completar mis estudios como ingeniero de software.</strong
+        > Me considero un aprendiz autodidacta y me apasiona brindar la mejor experiencia al usuario
+        en cada proyecto en el que me involucro.
+      </p>
+
+      <p>
+        A lo largo de mi trayectoria, he superado diversos obstáculos a través de pruebas
+        técnicas y la realización de proyectos <strong
+          >utilizando diferentes tecnologías.</strong
+        >
+      </p>
+
+      <p>
+        <strong>
+          Me encanta colaborar con los demás y asumir roles de <em class="italic font-black"
+            >liderazgo</em
+          > cuando se presenta la oportunidad.</strong
+        > Creo firmemente en el poder del trabajo en equipo y en la importancia de inspirar a otros
+        para alcanzar objetivos comunes.
+      </p>
+    </article>
+    <article class="flex justify-center dark:invert">
+      <AboutImgMe class="size-4/5 md:size-80" />
+    </article>
+  </main>
+</section>

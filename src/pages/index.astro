@@ -4,13 +4,26 @@ import Card from '../components/Card.astro'
 import NavBar from '../components/navBar.astro'
 import Hero from '../components/Hero.astro'
 import Projects from '../components/Projects.astro'
+import AboutMe from '../components/AboutMe.astro'
+import Footer from '../components/Footer.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="flex flex-col gap-16 max-w-[800px] mx-auto">
-    <NavBar />
+<!-- <Layout title="Welcome to Astro.">
+  <NavBar />
+  <main class="flex flex-col gap-16 px-7 max-w-[800px] mx-auto mt-16">
     <Hero />
     <Projects />
+    <AboutMe />
+  </main>
+</Layout> --><!-- w-[800px] mx-auto -->
+<Layout title="Welcome to Astro.">
+  <main class="max-w-[800px] mx-auto">
+    <NavBar />
+    <section class="flex flex-col gap-16 px-7 mt-16">
+      <Hero />
+      <Projects />
+      <AboutMe />
+      <Footer />
+    </section>
   </main>
 </Layout>
-<!-- w-[800px] mx-auto -->

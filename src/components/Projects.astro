@@ -8,6 +8,7 @@ import Nodejs from './icons/Nodejs.astro'
 import Mongodb from './icons/Mongodb.astro'
 import Github from './icons/github.astro'
 import Link from './icons/Link.astro'
+import Code from './icons/Code.astro'
 
 export interface TagItem {
   name: string
@@ -24,30 +25,34 @@ interface ProjectItem {
   tags: TagItem[]
 }
 
+function generateColorClasses(baseColor: string): string {
+  return `hover:${baseColor} dark:hover:${baseColor}`
+}
+
 const TAGS: Record<string, TagItem> = {
   TAILWIND: {
     name: 'Tailwind',
-    class: 'hover:bg-blue-950',
+    class: 'hover:bg-blue-950 dark:hover:bg-blue-950',
     icon: Tailwind
   },
   ASTRO: {
     name: 'Astro',
-    class: 'bg-blue-500',
+    class: 'hover:bg-blue-950 dark:hover:bg-blue-950',
     icon: Astro
   },
   REACT: {
     name: 'React',
-    class: 'hover:bg-sky-950',
+    class: 'hover:bg-sky-950 dark:hover:bg-sky-950',
     icon: React
   },
   NODEJS: {
     name: 'Node.js',
-    class: 'hover:bg-emerald-950',
+    class: 'hover:bg-emerald-950 dark:hover:bg-emerald-950',
     icon: Nodejs
   },
   MONGODB: {
     name: 'Mongodb',
-    class: 'hover:bg-[#001E2B]',
+    class: 'hover:bg-[#001E2B] dark:hover:bg-[#001E2B]',
     icon: Mongodb
   }
 }
@@ -73,8 +78,10 @@ const PROJECTS: ProjectItem[] = [
 ]
 ---
 
-<section class="flex flex-col gap-8 px-7 lg:px-0 transition-all">
-  <h2 class="text-4xl font-extrabold mb-4">&lt;/&gt; Proyectos</h2>
+<section class="flex flex-col gap-8 lg:px-0 transition-all" id="proyectos">
+  <h2 class="text-4xl font-extrabold mb-4 flex items-center gap-x-3 dark:text-white">
+    <Code class="size-16" />Proyectos
+  </h2>
   {
     PROJECTS.map(({ image, title, description, tags, link, code }) => {
       return (
@@ -89,12 +96,12 @@ const PROJECTS: ProjectItem[] = [
           </div>
 
           <section class="flex flex-col gap-4">
-            <h3 class="text-3xl font-bold text-neutral-800">{title}</h3>
-            <ul class="flex gap-x-1 flex-row">
+            <h3 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">{title}</h3>
+            <ul class="flex gap-x-1 gap-y-1 flex-row flex-wrap">
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-xs text-white bg-black ${tag.class} transition-all py-1 px-2 hover:cursor-default group `}
+                    class={`flex gap-x-2 rounded-full text-xs dark:hover:text-white  dark:bg-neutral-700 text-white bg-black ${tag.class} transition-all py-1 px-2 hover:cursor-default group`}
                     id="Tag"
                   >
                     <tag.icon
@@ -106,8 +113,8 @@ const PROJECTS: ProjectItem[] = [
                 </li>
               ))}
             </ul>
-            <p class="text-neutral-500">{description}</p>
-            <ul class="flex gap-x-2">
+            <p class="text-neutral-500 dark:text-neutral-400 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-wrap">
               {link ? (
                 <li>
                   <SocialPills href={link}>
@@ -118,7 +125,7 @@ const PROJECTS: ProjectItem[] = [
               ) : null}
               {code ? (
                 <li>
-                  <SocialPills href="#">
+                  <SocialPills href={code}>
                     <Github class="size-8" />
                     Code
                   </SocialPills>

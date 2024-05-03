@@ -1,0 +1,32 @@
+---
+import Linkedin from './icons/linkedin.astro'
+import Twitter from './icons/twitter.astro'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer
+  class="dark:text-neutral-300 border-t-2 border-neutral-700 dark:border-neutral-400 py-4 gap-y-2 text-xs text-pretty flex justify-between flex-wrap text-neutral-700"
+>
+  <span class="mr-4">
+    © {currentYear}
+    <a href="https://github.com/contexto01">Daniel(@contexto01)</a> X <a
+      href="https://github.com/midudev">Midudev</a
+    > Algunos derechos reservados
+  </span>
+  <ul class="flex gap-x-4">
+    <li>
+      <a href="https://twitter.com/contexto484" target="_blank">
+        <Twitter class="size-4" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/daniel-steve-barrera-polo-39b93a271/"
+        target="_blank"
+      >
+        <Linkedin class="size-4" />
+      </a>
+    </li>
+  </ul>
+</footer>

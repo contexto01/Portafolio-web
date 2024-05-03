@@ -8,7 +8,7 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scrollbar scrollbar-thumb-neutral-200 scrollbar-track-neutral-900">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -17,33 +17,49 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="">
+  <body class="dark:bg-black">
     <!-- <div
       class="absolute inset-0 -z-10 h-screen w-full bg-black bg-[radial-gradient(#171717_1px,transparent_1px)] [background-size:16px_16px]"
     > -->
-    <div
+    <!-- <div
       class="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
     >
+    </div> -->
+    <!-- <div
+      class="fixed inset-0 -z-10 h-screen w-full dark:bg-black dark:bg-[radial-gradient(#171717_1px,transparent_1px)] dark:[background-size:16px_16px]bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+    >
+    </div> -->
+    <!-- <div
+      class="fixed -z-10 h-full w-full bg-black bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+    >
+    </div> -->
+    <div
+      class="fixed -z-10 h-full w-full dark:bg-black bottom-0 left-0 right-0 top-0 dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] dark:bg-[size:14px_24px] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+    >
     </div>
+
     <!-- <div class="absolute inset-0 z-10 h-screen w-full bg-yellow-500"></div> -->
   </body>
-</html>
-<slot />
 
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: 'Onest Variable', sans-serif;
-    color: black;
-  }
-</style>
+  <slot />
+
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+
+    html {
+      font-family: 'Onest Variable', sans-serif;
+      color: black;
+      scroll-behavior: smooth;
+    }
+  </style>
+</html>

@@ -14,20 +14,20 @@ import { Image } from 'astro:assets'
       width="160"
       height="160"
       loading="eager"
-      class="rounded-full shadow-xl"
+      class="rounded-full shadow-xl dark:shadow-neutral-900 dark:backdrop-blur dark:bg-neutral-50 dark:bg-opacity-50"
     />
-    <h1 class="font-black text-5xl text-center text-balance">
+    <h1 class="font-black text-5xl text-center text-balance dark:text-white">
       Hey, soy daniel<WavingHand class="size-16 inline waving-hand" />
     </h1>
     <p
-      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-zinc-950 [&>strong]:text-zinc-950 [&>strong]:font-semibold dark:text-zinc-600 text-center text-balance"
+      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-zinc-300 [&>strong]:text-zinc-950 [&>strong]:font-semibold dark:text-zinc-400 text-center text-balance"
     >
       +2 años de experiencia. <strong>Ingeniero de Software fullstack</strong>. Especializado
       en el desarrollo de aplicaciones web, enfocado en soluciones innovadoras para impulsar el
       éxito de cada proyecto.
     </p>
   </main>
-  <ul class="flex gap-4">
+  <ul class="flex gap-4 flex-wrap">
     <li>
       <SocialPills href="https://www.linkedin.com/in/daniel-steve-barrera-polo-39b93a271">
         <Linkedin class="size-8" />
