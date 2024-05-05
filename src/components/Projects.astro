@@ -89,7 +89,7 @@ const PROJECTS: ProjectItem[] = [
           <div class="flex justify-center">
             <img
               alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top sm:w-full bg-center sm:h-full w-full bg-cover flex flex-col items-center transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl grayscale hover:grayscale-0 hover:scale-105"
+              class="object-cover object-center sm:w-full bg-center sm:h-full w-full bg-cover flex flex-col items-center transition duration-500 ease-in-out shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl grayscale hover:grayscale-0 hover:scale-105"
               loading="lazy"
               src={image}
             />
@@ -117,16 +117,16 @@ const PROJECTS: ProjectItem[] = [
             <ul class="flex gap-x-2 flex-wrap">
               {link ? (
                 <li>
-                  <SocialPills href={link}>
-                    <Link class="size-8" />
+                  <SocialPills href={link} padding="4px 12px">
+                    <Link class="size-4" />
                     Preview
                   </SocialPills>
                 </li>
               ) : null}
               {code ? (
                 <li>
-                  <SocialPills href={code}>
-                    <Github class="size-8" />
+                  <SocialPills href={code} padding="4px 12px">
+                    <Github class="size-4" />
                     Code
                   </SocialPills>
                 </li>

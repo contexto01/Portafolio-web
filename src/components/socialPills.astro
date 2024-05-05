@@ -1,13 +1,32 @@
 ---
 interface Props {
   href: string
+  padding?: string
 }
 
-const { href } = Astro.props
+const { padding, href } = Astro.props
+---
+
+<!-- ---
+interface Props {
+  href: string
+  padding?: string;
+}
+
+const { padding } = Astro.props
 ---
 
 <a
   class="flex items-center gap-2 p-2 px-4 border-neutral-800 dark:border-neutral-400 dark:text-white dark:hover:text-black dark:hover:bg-neutral-100 border-2 rounded-full hover:bg-neutral-800 hover:text-white transition-all cursor-pointer backdrop-blur"
+  {...Astro.props}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <slot />
+</a> -->
+<a
+  class="flex items-center gap-2 p-2 px-4 border-neutral-800 dark:border-neutral-400 dark:text-white dark:hover:text-black dark:hover:bg-neutral-100 border-2 rounded-full hover:bg-neutral-800 hover:text-white transition-all cursor-pointer"
+  style={`padding: ${padding || '8px 16px'};`}
   {...Astro.props}
   target="_blank"
   rel="noopener noreferrer"

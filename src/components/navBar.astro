@@ -41,7 +41,7 @@ const LINKS = [
   </nav>
 </header>
 
-<!-- <style>
+<style>
   a::before {
     display: block;
     content: attr(title);
@@ -55,19 +55,20 @@ const LINKS = [
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-
+  header {
+    @apply bg-white/60 dark:bg-black/60;
+  }
   @keyframes nav-shadown {
+    0% {
+      @apply bg-white/0 dark:bg-black/0;
+    }
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-yellow-600 dark:bg-gray-800/90 bg-white/50 ring-white/10;
-
-      :global(.dark) {
-        @apply p-32;
-      }
+      @apply shadow-lg backdrop-blur rounded-xl;
     }
   }
-</style> -->
+</style>
 
-<script>
+<!-- <script>
   const $NavBar = document.getElementById('NavBar')
   let isScrolled = false
 
@@ -95,4 +96,4 @@ const LINKS = [
 
   window.addEventListener('DOMContentLoaded', handleScroll)
   window.addEventListener('scroll', handleScroll, { passive: true })
-</script>
+</script> -->
