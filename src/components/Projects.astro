@@ -2,7 +2,7 @@
 import SocialPills from './socialPills.astro'
 
 import Tailwind from './icons/Tailwind.astro'
-import Astro from './icons/Astro.astro'
+import AstroLogo from './icons/AstroLogo.astro'
 import React from './icons/React.astro'
 import Nodejs from './icons/Nodejs.astro'
 import Mongodb from './icons/Mongodb.astro'
@@ -38,7 +38,7 @@ const TAGS: Record<string, TagItem> = {
   ASTRO: {
     name: 'Astro',
     class: 'hover:bg-blue-950 dark:hover:bg-blue-950',
-    icon: Astro
+    icon: AstroLogo
   },
   REACT: {
     name: 'React',
@@ -59,21 +59,22 @@ const TAGS: Record<string, TagItem> = {
 
 const PROJECTS: ProjectItem[] = [
   {
-    title: 'Todo list contexto',
+    title: 'Cuality Team',
     description:
-      'Desarrollé un Todo List con TailwindCSS, React, Node.js, MongoDB, TypeScript y Zustand para mi portafolio. Aprendí a integrar tecnologías frontend y backend, gestionar estados de forma eficiente y trabajar con bases de datos NoSQL. ¡Potencié mi habilidad en el desarrollo full-stack!',
-    link: 'https://todolistcontexto.netlify.app/',
-    image: '/projects/ProyectoTodolist.webp',
-    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.MONGODB]
+      'Explora Cuality Team: tu biblioteca virtual de videojuegos, similar a Steam. Encuentra títulos únicos como Fall of the Gods, un juego de pixel art 2D ambientado en la mitología griega, creado por nuestra propia empresa. ¡Sumérgete en mundos épicos y descubre juegos extraordinarios!',
+    link: 'https://cualityteam.netlify.app/',
+    code: 'https://github.com/contexto01/CualityTeam',
+    image: '/projects/CualityTeam.webp',
+    tags: [TAGS.TAILWIND, TAGS.ASTRO, TAGS.NODEJS, TAGS.MONGODB]
   },
   {
-    title: 'Fall of the gods',
+    title: 'LimecBooks',
     description:
-      'Creé un juego de aventuras basado en la mitología griega con GDScript para el juego, y TailwindCSS y React para la página. Explora roles mitológicos en un mundo de pixel art 2D. Desarrollé habilidades en diseño de juegos y creación de interfaces web.',
-    link: 'https://fallofthegods.netlify.app/',
-    code: 'https://github.com/contexto01/Fall-of-the-gods',
-    image: '/projects/FallOfTheGods.webp',
-    tags: [TAGS.TAILWIND, TAGS.REACT]
+      'Descubre la Biblioteca Virtual Limecbooks: Accede a nuestro catálogo en línea para explorar libros disponibles y no disponibles. Encuentra fácilmente descripciones detalladas de cada obra. Desarrollada con React, Tailwind, Node.js y MongoDB Atlas, te brinda acceso inmediato y eficiente al conocimiento.',
+    link: 'https://limecbooks.netlify.app/',
+    code: 'https://github.com/contexto01/LimecBooks',
+    image: '/projects/LimecBooks.webp',
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.MONGODB]
   }
 ]
 ---
@@ -108,6 +109,7 @@ const PROJECTS: ProjectItem[] = [
                       class="size-4 group-hover:grayscale-0 grayscale transition-all"
                       fill="currentColor"
                     />
+
                     {tag.name}
                   </span>
                 </li>
